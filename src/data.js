@@ -12,4 +12,4 @@ return Math.floor(value/1000000)+'M'
    else {
     return value;
    }
-}
+} 
