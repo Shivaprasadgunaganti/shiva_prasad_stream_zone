@@ -7,12 +7,15 @@ import save from "../../assets/save.png";
 import { API_KEY, value } from "../../data";
 import moment from "moment";
 import { useParams } from "react-router-dom";
+import confetti from "canvas-confetti";
 export const PlayVideo = () => {
   const { videoId  } = useParams();
   // console.log(videoId,'videoId')
   const [apiData, setApiData] = useState(null);
   const [channelData, setChannelData] = useState(null);
   const [commentData, setCommentData] = useState([]);
+  const [subscribe,isSubscribe]=useState(false)
+  console.log(subscribe)
 
   const fetchData = async () => {
     const response = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${API_KEY}`;
@@ -39,6 +42,14 @@ export const PlayVideo = () => {
   useEffect(() => {
     if (apiData) fetchDataChannel();
   }, [apiData]);
+  const buttonHandler=()=>{
+    isSubscribe((pre)=>!pre)
+    confetti({
+      particleCount: 100,
+      spread: 50,
+      origin: { y: 0.6 }
+    });
+  }
   return (
     <div className="play-video">
       <iframe
@@ -88,7 +99,7 @@ export const PlayVideo = () => {
             Subscribers
           </span>
         </div>
-        <button>subscribe</button>
+        <button onClick={buttonHandler}>{subscribe ? 'subscribed':'subscribe'}</button>
       </div>
       <div className="vid-description">
         <p>{apiData ? apiData.snippet.description.slice(0, 250) : ""}</p>

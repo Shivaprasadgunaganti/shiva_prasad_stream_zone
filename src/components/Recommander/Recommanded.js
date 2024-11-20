@@ -3,7 +3,6 @@ import "./Recommanded.css";
 import { API_KEY, value } from "../../data";
 import { Link } from "react-router-dom";
 export const Recommanded = ({ categoryId, searchKeyword }) => {
-  // console.log(categoryId, "cid", searchKeyword,'skd');
   const [apiData, setApiData] = useState([]);
   const fetchData = async () => {
     const relatedVideos = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostpopular&regionCode=US&maxResults=50&videoCategoryId=${categoryId}&key=${API_KEY}`;

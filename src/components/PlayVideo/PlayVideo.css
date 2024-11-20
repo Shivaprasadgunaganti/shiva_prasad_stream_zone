@@ -1,26 +1,32 @@
 .play-video{
-    flex-basis: 69%;
-    /* background-color: black; */
+    flex-basis: 55%;
 }
 .play-video iframe{
-    width: 100%;
+    width: 110%;
     height: 37vw;
+    margin-left: 10%;
+    border-radius: 5%;
 }
 .play-video h3{
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-left: 10%;
     font-weight: 600;
     font-size: 22px;
     color: white;
 }
 .play-video-info{
     display: flex;
+    height: 7vh;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 10px;
+    margin-left: 10%;
+    margin-right: -20%;
     font-size: 14px;
     color: white;
 }
+
 .play-video-info img{
     width: 20px;
     margin-right: 8px;
@@ -33,13 +39,17 @@
 .play-video hr{
     border: 0;
     height: 1px;
+    width: 110%;
     background: white;
-    margin: 10px 0;
+    margin: 20px 10%;
 }
 .publisher{
     display: flex;
     align-items: center;
     margin-top: 20px;
+    margin-left: 10%;
+    width: 110%;
+    height: 4vw;
 }
 .publisher div{
     flex: 1;
@@ -70,27 +80,34 @@
 }
 .vid-description{
     padding-left: 55px;
-    margin: 15px 0;
+    margin: 15px ;
+
 }
 .vid-description p{
     font-size: 14px;
     margin-bottom: 5px;
+    margin-left: 2%;
     color: white;
 }
 .vid-description h4{
      font-size: 14px;
      color: white;
      margin-top: 15px;
+     margin-left: 3%;
+}
+.vid-description hr{
+    margin-left: 2%;
+    width: 123%;
 }
 .comment{
     display: flex;
     align-items: flex-start;
-    margin: 20px 0;
+    margin: 20px 20px;
 }
 .comment img{
     width: 35px;
     border-radius: 50%;
-    margin-right: 15px;
+    margin-right: 1px;
 } 
  .comment h3{
     font-size: 14px;
@@ -130,9 +147,18 @@
     .vid-description{
         padding-left: 0;
     }
+    .vid-description p{
+        margin-left: 20px;
+    }
+    .vid-description hr{
+        margin-left: 5%;
+    }
+    .vid-description h4{
+        padding-left: 5%;
+    }
     .play-video .play-video-info span{
         margin-left: 0;
-        margin-right: 15px;
+        margin-right: 25px;
         margin-top: 15px;
     }
 }

@@ -14,7 +14,6 @@ export const Home = () => {
  useEffect(()=>{
   setSidebar(resToggle)
  },[resToggle])
-  // console.log(sidebar,'input')
   return (
     <div>
       <Sidebar sidebar={sidebar} category={category} setCategory={setCategory} /> 
