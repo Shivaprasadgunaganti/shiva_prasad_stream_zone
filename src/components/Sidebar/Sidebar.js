@@ -13,66 +13,144 @@ import jack from "../../assets/jack.png";
 import simon from "../../assets/simon.png";
 import tom from "../../assets/tom.png";
 import megan from "../../assets/megan.png";
-export const Sidebar = ({sidebar,category,setCategory }) => {
+export const Sidebar = ({ sidebar, category, setCategory }) => {
   return (
-    <div className={`sidebar ${sidebar?'':'small-sidebar'}`}>
+    <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
       <div className="shortcut-links">
-        <div className={`side-link ${category===0?'active':''}`} onClick={()=>setCategory(0)}>
+        <div
+          className={`side-link ${category === 0 ? "active" : ""}subscriptions `}
+          onClick={() => setCategory(0)}
+        >
           <img src={home} alt="" />
-          <p>Home</p>
+          <div className="col-md-12 text-center">
+            <p className="animate-charcter">Home</p>
+          </div>
         </div>
-        <div className={`side-link ${category===20?'active':''}`} onClick={()=>setCategory(20)}>
+
+        <div
+          className={`side-link ${
+            category === 20 ? "active" : ""
+          } subscriptions `}
+          onClick={() => setCategory(20)}
+        >
           <img src={game_icon} alt="" />
-          <p>Games</p>
+          <div className="col-md-12 text-center">
+            <p className="animate-charcter">Games</p>
+          </div>
         </div>
-        <div className={`side-link ${category===2?'active':''}`} onClick={()=>setCategory(2)}>
+
+        <div
+          className={`side-link ${
+            category === 2 ? "active" : ""
+          } subscriptions`}
+          onClick={() => setCategory(2)}
+        >
           <img src={automobiles} alt="" />
-          <p>AutoMobiles</p>
+          <div className="col-md-12 text-center">
+            <p className="animate-charcter">AutoMobiles</p>
+          </div>
         </div>
-        <div className={`side-link ${category===17?'active':''}`} onClick={()=>setCategory(17)}>
+        <div
+          className={`side-link ${
+            category === 17 ? "active" : ""
+          } subscriptions`}
+          onClick={() => setCategory(17)}
+        >
           <img src={sports} alt="" />
-          <p>Sports</p>
+          <div className="col-md-12 text-center">
+            <p className="animate-charcter">Sports</p>
+          </div>
         </div>
-        <div className={`side-link ${category===24?'active':''}`} onClick={()=>setCategory(24)}>
+        <div
+          className={`side-link ${
+            category === 24 ? "active" : ""
+          }subscriptions`}
+          onClick={() => setCategory(24)}
+        >
           <img src={entertainment} alt="" />
-          <p>Entertainment</p>
+          <div className="col-md-12 text-center">
+            <p className="animate-charcter">Fun</p>
+          </div>
         </div>
-        <div className={`side-link ${category===28?'active':''}`} onClick={()=>setCategory(28)}>
+        <div
+          className={`side-link ${
+            category === 28 ? "active" : ""
+          }subscriptions`}
+          onClick={() => setCategory(28)}
+        >
           <img src={tech} alt="" />
-          <p>Tech</p>
+          <div className="col-md-12 text-center">
+            <p className="animate-charcter">Tech</p>
+          </div>
         </div>
-        <div className={`side-link ${category===10?'active':''}`} onClick={()=>setCategory(10)}>
+        <div
+          className={`side-link ${
+            category === 10 ? "active" : ""
+          }subscriptions`}
+          onClick={() => setCategory(10)}
+        >
           <img src={music} alt="" />
-          <p>Music</p>
+          <div className="col-md-12 text-center">
+            <p className="animate-charcter">Music</p>
+          </div>
         </div>
-        <div className={`side-link ${category===22?'active':''}`} onClick={()=>setCategory(22)}>
+        <div
+          className={`side-link ${
+            category === 22 ? "active" : ""
+          }subscriptions`}
+          onClick={() => setCategory(22)}
+        >
           <img src={blogs} alt="" />
-          <p>Blogs</p>
+          <div className="col-md-12 text-center">
+            <p className="animate-charcter">Blogs</p>
+          </div>
         </div>
-        <div className={`side-link ${category===25?'active':''}`} onClick={()=>setCategory(25)}>
+        <div
+          className={`side-link ${
+            category === 25 ? "active" : ""
+          }subscriptions`}
+          onClick={() => setCategory(25)}
+        >
           <img src={news} alt="" />
-          <p>News</p>
+          <div className="col-md-12 text-center">
+            <p className="animate-charcter">News</p>
+          </div>
         </div>
         <hr />
       </div>
       <div className="subscribed-list">
-        <h2>Subscribed</h2>
+        {/* <h2>Subscribed</h2> */}
+        <div className="waviy">
+          <span style={{ "--i": 1 }}>S</span>
+          <span style={{ "--i": 2 }}>u</span>
+          <span style={{ "--i": 3 }}>b</span>
+          <span style={{ "--i": 4 }}>s</span>
+          <span style={{ "--i": 5 }}>c</span>
+          <span style={{ "--i": 6 }}>r</span>
+          <span style={{ "--i": 7 }}>i</span>
+          <span style={{ "--i": 8 }}>p</span>
+          <span style={{ "--i": 9 }}>t</span>
+          <span style={{ "--i": 10 }}>i</span>
+          <span style={{ "--i": 11 }}>o</span>
+          <span style={{ "--i": 12 }}>n</span>
+          <span style={{ "--i": 13 }}>s</span>
+        </div>
 
         <div className="side-link">
-          <img src={jack} alt="" />
-          <p>jack</p>
+          <img src='https://yt3.googleusercontent.com/NaG1OiQHKCSx4Xl2gvd0niSs9fgk10BDhUDiiqGik2o5lpRaeGJL4ecnv2tGUe14zHiS7h_laYM=s160-c-k-c0x00ffffff-no-rj' alt="" />
+          <p>Raw talks with Vk</p>
         </div>
         <div className="side-link">
-          <img src={simon} alt="" />
-          <p>simon</p>
+          <img src='https://yt3.googleusercontent.com/ytc/AIdro_l33grX8QP2RB1eB2yKmmLJigk7rCZ_nEApCQz60zDvtXU=s160-c-k-c0x00ffffff-no-rj' alt="" />
+          <p>Filmy Moji</p>
         </div>
         <div className="side-link">
-          <img src={tom} alt="" />
-          <p>tom</p>
+          <img src='https://yt3.googleusercontent.com/ytc/AIdro_mcSBbWEONbXB8lgdlbvj2rrzmLzbCLAg_v1ECMj1VJQDM=s160-c-k-c0x00ffffff-no-rj' alt="" />
+          <p>Creative Thinks</p>
         </div>
         <div className="side-link">
-          <img src={megan} alt="" />
-          <p>megan</p>
+          <img src='https://yt3.googleusercontent.com/o4MZVi2qdNgx0K7vpEl7DT2PefjROdisZTD7is6TMimF1_DTM49O1ld3iQzTpE5MCj86c-vzav8=s160-c-k-c0x00ffffff-no-rj' alt="" />
+          <p>Telusko</p>
         </div>
       </div>
     </div>

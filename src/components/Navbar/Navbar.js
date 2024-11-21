@@ -44,7 +44,7 @@ export const Navbar = ({ setButton ,toggleData  }) => {
           <img src={upload} alt=""  title="upload"/>
           <img src={more_icon} title="icons" alt=""/>
           <img src={notification} title="notifications" alt=""/>
-          <img src={profile_icon} className="user_icon" title="profile" alt=""/>
+          <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs2qXiuQU0TXmgDxe1J71lncA4heUeBCOB8A&s' className="user_icon" title="profile" alt=""/>
         </div>
       </nav>
   );
