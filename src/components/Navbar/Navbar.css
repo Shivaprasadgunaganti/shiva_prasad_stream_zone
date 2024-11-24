@@ -16,11 +16,11 @@ nav{
     color: white;
 }
 .nav-left .logo::after{
-    content: 'Stream Zone';
+    content: 'ContentHub';
 }
-.nav-left .logo:hover::after{
+/* .nav-left .logo:hover::after{
     content: 'Back';
-}
+} */
 .nav-middle{
     width: 40%;
 }

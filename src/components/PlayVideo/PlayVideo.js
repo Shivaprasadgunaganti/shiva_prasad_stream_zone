@@ -8,6 +8,8 @@ import { API_KEY, value } from "../../data";
 import moment from "moment";
 import { useParams } from "react-router-dom";
 import confetti from "canvas-confetti";
+import { Navbar } from "../Navbar/Navbar";
+import { Sidebar } from "../Sidebar/Sidebar";
 export const PlayVideo = () => {
   const { videoId  } = useParams();
   const [apiData, setApiData] = useState(null);
@@ -50,6 +52,8 @@ export const PlayVideo = () => {
     });
   }
   return (
+
+    
     <div className="play-video">
       <iframe
         src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
@@ -132,5 +136,6 @@ export const PlayVideo = () => {
         })}
       </div>
     </div>
+   
   );
 };

@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Recommanded.css";
 import { API_KEY, value } from "../../data";
 import { Link } from "react-router-dom";
-export const Recommanded = ({ categoryId, searchKeyword }) => {
+import { ProfileWrapper } from "../../App";
+export const Recommanded = ({ categoryId,searchKeyword}) => {
+  const input=useContext(ProfileWrapper)
+ const res=input.value
   const [apiData, setApiData] = useState([]);
+  console.log(apiData,'apidata')
   const fetchData = async () => {
     const relatedVideos = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostpopular&regionCode=US&maxResults=50&videoCategoryId=${categoryId}&key=${API_KEY}`;
     await fetch(relatedVideos)
@@ -11,15 +15,15 @@ export const Recommanded = ({ categoryId, searchKeyword }) => {
       .then((data) => setApiData(data.items));
   };
   const fetchData1= async ()=>{
-    const response =`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${searchKeyword}&maxResults=10&key=${API_KEY}`
+    const response =`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${res}&maxResults=20&key=${API_KEY}`
     await fetch(response)
     .then((res)=>res.json())
     .then((data)=>setApiData(data.items))
   }
   useEffect(() => {
     if (categoryId) fetchData();
-    else if (searchKeyword) fetchData1();
-  }, [categoryId,searchKeyword]);
+    else if (res) fetchData1();
+  }, []);
   return (
     <div className="recommander">
       {apiData.map((item, index) => {
