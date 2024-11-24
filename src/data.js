@@ -1,5 +1,6 @@
-// export const API_KEY='AIzaSyDJA6Sb-auSj8hiT6shUzKZUpGsU92xw9U'
-export const API_KEY=`AIzaSyC4ideE2KFIP90UpjeL_4Kmhtqm2lOpnOQ`
+export const API_KEY='AIzaSyDJA6Sb-auSj8hiT6shUzKZUpGsU92xw9U'
+// export const API_KEY=`AIzaSyC4ideE2KFIP90UpjeL_4Kmhtqm2lOpnOQ`
+// export const API_KEY=`'AIzaSyDJA6Sb-auSj8hiT6shUzKZUpGsU92xw9U'`
 
 export const value=(value)=>{
    

@@ -39,7 +39,8 @@ export const Feed = ({ category, value1 }) => {
             <h3>{item.snippet.channelTitle}</h3>
             <p>
               {
-                item.statistics?.viewCount ? `${value(item.statistics.viewCount)} views` : ""}
+                item.statistics?.viewCount ? `${value(item.statistics.viewCount)} views` : ""}      	| {""}  
+             
               {moment(item.snippet.publishedAt).fromNow()}
               
             </p>

@@ -3,25 +3,29 @@
 }
 .side-video-list{
     display: flex;
-    justify-content: space-between;
-    margin: 20px 10px;
+    justify-content: space-evenly;
+    margin: 30px 10px;
+    /* border:  2px solid red; */
 }
 .side-video-list img{
     flex-basis: 49%;
-    width: 60%;
-   border-radius: 10px 10px 10px 10px;
+    width: 45%;
+   border-radius: 20px 20px 20px 20px;
 }
 .vid-info{
     flex-basis: 35%;
 }
 .vid-info h4{
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 5px;
-    color: rgb(247, 247, 252);
+    color: rgb(124, 134, 127);
 }
 .vid-info p{
-    color: rgb(232, 232, 77);
+    color: rgb(153, 153, 81);
+    font-size: 12px;
 }
+
+
 @media (max-width:900px) {
     .recommander{
         flex-basis: 100%;

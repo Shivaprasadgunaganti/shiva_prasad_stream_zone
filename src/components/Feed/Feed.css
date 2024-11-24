@@ -22,18 +22,21 @@
 .card h2 {
   font-size: 16px;
   font-weight: 600;
-  color: white;
+  /* color: #9deb879e; */
+  color: rgba(255, 157, 0, 0.589);
   margin: 7px 7px;
 }
 .card h3 {
   font-size: 14px;
   font-weight: 600;
-  color: wheat;
+  color: rgba(179, 232, 245, 0.421);
   margin: 7px 7px;
 }
 .card p {
   font-size: 14px;
-  margin-left: 5px;
+  /* color: rgb(159, 227, 128); */
+  color: rgba(186, 215, 82, 0.582);
+  margin-left: 8px;
 }
 
 @media (max-width:900px) {

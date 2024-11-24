@@ -15,9 +15,6 @@ p{
     width: 30px;
     margin-right: 20px;
 }
-.side-link img:hover{
-    background-color: rgb(135, 206, 235);
-}
 
 .side-link{
     display: flex;
@@ -37,10 +34,7 @@ p{
     border-radius: 50%;
     margin-right: 20px;
 }
-.subscribed-list .side-link p{
-    font-size: 90%;
-    color: rgb(93, 165, 158);
-}
+
 .subscribed-list .side-link{
     margin-top: 20px;
 }
@@ -153,3 +147,40 @@ p{
     box-sizing: border-box;
   }
   
+
+
+  
+
+.subscribed-list .side-link p {
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    padding: 10px 10px;
+    border-radius: 15px;
+    border: none;
+    font-size: 10px;
+    color: #e0ffff;
+  
+    cursor: pointer;
+    z-index: 1;
+  }
+  .subscribed-list .side-link p::before{
+    content: '';
+    position: absolute;
+    inset: -3px 50px;
+    background: #42455a;
+    transition: inset 350ms ease;
+    z-index: -2;
+  }
+  .subscribed-list .side-link p:hover::before{
+    inset: -20px 0px;
+    background: #00c2cb;
+  }
+  .subscribed-list .side-link p::after{
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border-radius: 10px;
+    background: #22232e;
+    z-index: -1;
+  }

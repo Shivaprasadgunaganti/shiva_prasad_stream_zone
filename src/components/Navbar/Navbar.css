@@ -15,6 +15,12 @@ nav{
     width: 130px;
     color: white;
 }
+.nav-left .logo::after{
+    content: 'Stream Zone';
+}
+.nav-left .logo:hover::after{
+    content: 'Back';
+}
 .nav-middle{
     width: 40%;
 }
@@ -30,7 +36,7 @@ nav{
     height: 40px;
 }
 .nav-middle .search-box:hover{
-    border: 1px solid rgb(3, 229, 254);
+    border: 1px solid rgba(79, 191, 203, 0.818);
     outline: 0px;
     
 }
@@ -43,31 +49,51 @@ nav{
     color: white;
 }
 ::placeholder{
-    color: red;
+    color: rgba(15, 195, 231, 0.666);
     opacity: 1;
 }
 .nav-middle .search-box img{
    margin-left: 20%;
 }
-
+.nav-right {
+    gap: 20px   ;
+}
 
 .nav-right img{
     width: 25px;
     margin-right: 25px;
 }
-.nav-right img:hover{
-    background-color: rgb(38, 56, 62);
-}
+
 .nav-right .user_icon{
     width: 35px;
     border-radius: 50%;
+}
+@media (max-width:329px) {
+    .nav-middle .search-box img{
+        margin-left: -40%;
+    }
+}
+@media (min-width:330px) and (max-width:390px) {
+    .nav-middle .search-box{
+       margin-right: 20%;
+    }
+    .nav-middle .search-box img{
+        margin-left: 15%;
+    }
+
+}
+@media (min-width:391px) and (max-width:770px) {
+    .nav-middle .search-box img{
+        margin-left: 50%;
+    }
+    
 }
 
 @media (max-width:900px) {
     .menu_icon{
         display: none;
     }
-    .nav-right img{
+    .nav-right .img{
         display: none;
     }
     .nav-right .user_icon{
@@ -85,4 +111,59 @@ nav{
     }
 }
 
+@media (min-width:2000px) and (max-width:2660px) {
+    .nav-middle .search-box img{
+        margin-left: 55%;
+    }
+}
 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+
+  .video-icon {
+    font-size: 20px; 
+    color: #ff4d4d; 
+    transition: color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+  }
+  
+
+  .video-icon:hover {
+    animation: spin 0.8s ease-in-out, bounce 0.8s ease-in-out;
+    color: #4d79ff; 
+  }
+  
+
+
+@keyframes shake {
+    0% { transform: rotate(0); }
+    25% { transform: rotate(-15deg); }
+    50% { transform: rotate(15deg); }
+    75% { transform: rotate(-15deg); }
+    100% { transform: rotate(0); }
+  }
+  
+
+  .bell-icon {
+    font-size: 20px;
+    color: #e6e2dd; 
+    transition: color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+  }
+  
+
+  .bell-icon:hover {
+    animation: shake 0.5s ease-in-out;
+    color: #ff4d4d; 
+  }
+  

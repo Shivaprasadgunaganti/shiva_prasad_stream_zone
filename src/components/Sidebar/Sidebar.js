@@ -18,7 +18,9 @@ export const Sidebar = ({ sidebar, category, setCategory }) => {
     <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
       <div className="shortcut-links">
         <div
-          className={`side-link ${category === 0 ? "active" : ""}subscriptions `}
+          className={`side-link ${
+            category === 0 ? "active" : ""
+          }subscriptions `}
           onClick={() => setCategory(0)}
         >
           <img src={home} alt="" />
@@ -64,7 +66,7 @@ export const Sidebar = ({ sidebar, category, setCategory }) => {
         <div
           className={`side-link ${
             category === 24 ? "active" : ""
-          }subscriptions`}
+          } subscriptions`}
           onClick={() => setCategory(24)}
         >
           <img src={entertainment} alt="" />
@@ -72,10 +74,11 @@ export const Sidebar = ({ sidebar, category, setCategory }) => {
             <p className="animate-charcter">Fun</p>
           </div>
         </div>
+
         <div
           className={`side-link ${
             category === 28 ? "active" : ""
-          }subscriptions`}
+          } subscriptions`}
           onClick={() => setCategory(28)}
         >
           <img src={tech} alt="" />
@@ -86,7 +89,7 @@ export const Sidebar = ({ sidebar, category, setCategory }) => {
         <div
           className={`side-link ${
             category === 10 ? "active" : ""
-          }subscriptions`}
+          } subscriptions`}
           onClick={() => setCategory(10)}
         >
           <img src={music} alt="" />
@@ -97,7 +100,7 @@ export const Sidebar = ({ sidebar, category, setCategory }) => {
         <div
           className={`side-link ${
             category === 22 ? "active" : ""
-          }subscriptions`}
+          } subscriptions`}
           onClick={() => setCategory(22)}
         >
           <img src={blogs} alt="" />
@@ -108,7 +111,7 @@ export const Sidebar = ({ sidebar, category, setCategory }) => {
         <div
           className={`side-link ${
             category === 25 ? "active" : ""
-          }subscriptions`}
+          } subscriptions`}
           onClick={() => setCategory(25)}
         >
           <img src={news} alt="" />
@@ -137,19 +140,32 @@ export const Sidebar = ({ sidebar, category, setCategory }) => {
         </div>
 
         <div className="side-link">
-          <img src='https://yt3.googleusercontent.com/NaG1OiQHKCSx4Xl2gvd0niSs9fgk10BDhUDiiqGik2o5lpRaeGJL4ecnv2tGUe14zHiS7h_laYM=s160-c-k-c0x00ffffff-no-rj' alt="" />
+          <img
+            src="https://yt3.googleusercontent.com/NaG1OiQHKCSx4Xl2gvd0niSs9fgk10BDhUDiiqGik2o5lpRaeGJL4ecnv2tGUe14zHiS7h_laYM=s160-c-k-c0x00ffffff-no-rj"
+            alt=""
+          />
+
           <p>Raw talks with Vk</p>
         </div>
         <div className="side-link">
-          <img src='https://yt3.googleusercontent.com/ytc/AIdro_l33grX8QP2RB1eB2yKmmLJigk7rCZ_nEApCQz60zDvtXU=s160-c-k-c0x00ffffff-no-rj' alt="" />
+          <img
+            src="https://yt3.googleusercontent.com/ytc/AIdro_l33grX8QP2RB1eB2yKmmLJigk7rCZ_nEApCQz60zDvtXU=s160-c-k-c0x00ffffff-no-rj"
+            alt=""
+          />
           <p>Filmy Moji</p>
         </div>
         <div className="side-link">
-          <img src='https://yt3.googleusercontent.com/ytc/AIdro_mcSBbWEONbXB8lgdlbvj2rrzmLzbCLAg_v1ECMj1VJQDM=s160-c-k-c0x00ffffff-no-rj' alt="" />
+          <img
+            src="https://yt3.googleusercontent.com/ytc/AIdro_mcSBbWEONbXB8lgdlbvj2rrzmLzbCLAg_v1ECMj1VJQDM=s160-c-k-c0x00ffffff-no-rj"
+            alt=""
+          />
           <p>Creative Thinks</p>
         </div>
         <div className="side-link">
-          <img src='https://yt3.googleusercontent.com/o4MZVi2qdNgx0K7vpEl7DT2PefjROdisZTD7is6TMimF1_DTM49O1ld3iQzTpE5MCj86c-vzav8=s160-c-k-c0x00ffffff-no-rj' alt="" />
+          <img
+            src="https://yt3.googleusercontent.com/o4MZVi2qdNgx0K7vpEl7DT2PefjROdisZTD7is6TMimF1_DTM49O1ld3iQzTpE5MCj86c-vzav8=s160-c-k-c0x00ffffff-no-rj"
+            alt=""
+          />
           <p>Telusko</p>
         </div>
       </div>
