@@ -1,9 +1,9 @@
-/* Play-Video Section Improvements */
 .play-video {
   flex-basis: 55%;
+  /* flex-basis: 35%; */
   width: 100%;
-  margin: 0 auto; /* Center align the section */
-  padding: 10px; /* Add inner spacing */
+  margin: 0 auto;
+  padding: 10px;
 }
 
 .play-video iframe {
@@ -17,7 +17,7 @@
   font-weight: 500;
   font-size: 22px;
   color: yellowgreen;
-  text-align: left; /* Align text to the left */
+  text-align: left;
 }
 
 .play-video-info {
@@ -28,7 +28,7 @@
   margin-top: 10px;
   font-size: 14px;
   color: white;
-  gap: 10px; /* Add spacing between elements */
+  gap: 10px;
 }
 
 .play-video-info div span {
@@ -38,17 +38,17 @@
   width: 30%;
 }
 .play-video-info p {
-  flex: 1; /* Make text take only as much space as needed */
+  flex: 1;
   color: rgba(178, 215, 76, 0.814);
   margin: 0;
-  white-space: nowrap; /* Prevent wrapping of text */
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* Add ellipsis if text overflows */
+  text-overflow: ellipsis;
 }
 
 .play-video-info div {
   display: flex;
-  gap: 1px; /* Space out elements */
+  gap: 1px;
 }
 
 .play-video hr {
@@ -59,7 +59,6 @@
   margin: 20px 0;
 }
 
-/* Publisher Section */
 .publisher {
   display: flex;
   align-items: center;
@@ -85,6 +84,9 @@
   color: rgb(0, 255, 179);
   margin: 0;
 }
+.publisher div p:hover {
+  color: rgb(236, 242, 148);
+}
 
 .publisher div span {
   font-size: 13px;
@@ -101,7 +103,6 @@
   cursor: pointer;
 }
 
-/* Video Description */
 .vid-description {
   width: 100%;
   padding: 10px;
@@ -111,7 +112,7 @@
   font-size: 14px;
   margin-bottom: 10px;
   color: rgba(255, 255, 255, 0.7);
-  word-wrap: break-word; /* Wrap text properly */
+  word-wrap: break-word;
 }
 
 .vid-description hr {
@@ -120,7 +121,6 @@
   margin: 10px 0;
 }
 
-/* Comments Section */
 .comment {
   display: flex;
   align-items: flex-start;
@@ -135,7 +135,7 @@
 }
 
 .comment div {
-  max-width: calc(100% - 45px); /* Adjust width to avoid overflow */
+  max-width: calc(100% - 45px);
   flex-grow: 1;
 }
 
@@ -151,12 +151,15 @@
   font-weight: 500;
   margin-left: 8px;
 }
+.comment h3 span:hover {
+  color: rgba(166, 236, 75, 0.666);
+}
 
 .comment div p {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.7);
   margin: 0;
-  overflow-wrap: break-word; /* Break long words */
+  overflow-wrap: break-word;
   line-height: 1.5;
 }
 
@@ -178,19 +181,17 @@
   color: rgb(255, 255, 255);
 }
 
-/* Responsive Fixes */
-@media (max-width:500px) {
-    .play-video-info p{
-        font-size: small;
-    }
-    .play-video h3{
-        font-size: medium;
-    }
-    .publisher div p{
-        font-size: 15px;
-        font-weight: 200;
-    }
-    
+@media (max-width: 500px) {
+  .play-video-info p {
+    font-size: small;
+  }
+  .play-video h3 {
+    font-size: medium;
+  }
+  .publisher div p {
+    font-size: 15px;
+    font-weight: 200;
+  }
 }
 @media (max-width: 768px) {
   .play-video {
@@ -211,8 +212,8 @@
   .vid-description p {
     font-size: 12px;
   }
-    
-  .play-video iframe{
+
+  .play-video iframe {
     border-radius: 5%;
   }
 }

@@ -1,186 +1,173 @@
-.sidebar{
-    width: 13%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    padding-left: 2%;
-    padding-top: 80px;
-    border: 2px solid;
+.sidebar {
+  width: 13%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  padding-left: 2%;
+  padding-top: 80px;
+  border: 2px solid;
 }
-p{
-    color: rgb(250, 5, 5);
-}
-
-.shortcut-links img{
-    width: 30px;
-    margin-right: 20px;
+p {
+  color: rgb(250, 5, 5);
 }
 
-.side-link{
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    width: fit-content;
-    flex-wrap: wrap;
-    cursor: pointer;
-}
-.sidebar hr{
-    border: 0;
-    height: 1px;
-    background-color: rgb(232, 17, 17);
-}
-.subscribed-list img{
-    width: 30px;
-    border-radius: 50%;
-    margin-right: 20px;
+.shortcut-links img {
+  width: 30px;
+  margin-right: 20px;
 }
 
-.subscribed-list .side-link{
-    margin-top: 20px;
+.side-link {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  width: fit-content;
+  flex-wrap: wrap;
+  cursor: pointer;
 }
-.small-sidebar{
-    width: 5%;
+.sidebar hr {
+  border: 0;
+  height: 1px;
+  background-color: rgb(232, 17, 17);
 }
-.small-sidebar p{
+.subscribed-list img {
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.subscribed-list .side-link {
+  margin-top: 20px;
+}
+.small-sidebar {
+  width: 5%;
+}
+.small-sidebar p {
+  display: none;
+}
+.small-sidebar h2 {
+  display: none;
+}
+.small-sidebar hr {
+  width: 50%;
+  background-color: red;
+  margin-bottom: 25px;
+}
+.side-link.active img {
+  padding-bottom: 2px;
+  border-bottom: 3px solid rgb(0, 255, 72);
+}
+
+@media (max-width: 900px) {
+  .sidebar {
     display: none;
-}
-.small-sidebar h2{
-    display: none;
-}
-.small-sidebar hr{
-    width: 50%;
-    background-color: red;
-    margin-bottom: 25px;
-}
-.side-link.active img{
-    padding-bottom: 2px;
-    border-bottom: 3px solid rgb(0, 255, 72);
-}
-
-
-@media (max-width:900px) {
-    .sidebar{
-       display: none; 
-    }
-    
+  }
 }
 
 .small-sidebar .waviy {
-    display: none;
+  display: none;
 }
 .waviy {
-    position: relative;
-    -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
-    font-size: 100%;
-    margin-top: 10%;
-    /* border:  2px solid red; */
-    width: 110%;
+  position: relative;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+  font-size: 100%;
+  margin-top: 10%;
+  width: 110%;
+}
+.waviy span {
+  font-family: "Courier New", Courier, monospace;
+  position: relative;
+  display: inline-block;
+  width: 7%;
+  color: yellowgreen;
+  text-transform: uppercase;
+  animation: waviy 10s infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+@keyframes waviy {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
   }
-  .waviy span {
-    font-family: "Courier New", Courier, monospace;
-    position: relative;
-    display: inline-block;
-    width: 7%;
-    /* color: #fff; */
-    color:  yellowgreen;
-    text-transform: uppercase;
-    animation: waviy 1.5s infinite;
-    animation-delay: calc(0.1s * var(--i));
+  20% {
+    transform: translateY(-20px);
   }
-  @keyframes waviy {
-    0%,
-    40%,
-    100% {
-      transform: translateY(0);
-    }
-    20% {
-      transform: translateY(-20px);
-    }
-  }
+}
 
+.subscriptions {
+  display: flex;
+  width: fit-content;
+}
+.imageheight {
+  height: 40px;
+  border-radius: 30px;
+}
 
+.animate-charcter {
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    /* #44107a 29%, */
+    /* #ff1361 67%, */
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 12s linear infinite;
+  display: inline-block;
+  font-size: 95%;
+}
 
-  .subscriptions {
-    display: flex;
-    width: fit-content;
+@keyframes textclip {
+  to {
+    background-position: 200% center;
   }
-  .imageheight {
-    height: 40px;
-    border-radius: 30px;
-  }
-  
-  
-  
-  .animate-charcter {
-    text-transform: uppercase;
-    background-image: linear-gradient(
-      -225deg,
-      #231557 0%,
-      #44107a 29%,
-      #ff1361 67%,
-      #fff800 100%
-    );
-    background-size: auto auto;
-    background-clip: border-box;
-    background-size: 200% auto;
-    color: #fff;
-    background-clip: text;
-    text-fill-color: transparent;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: textclip 2s linear infinite;
-    display: inline-block;
-    font-size: 95%;
-  }
+}
 
-
-  @keyframes textclip {
-    to {
-      background-position: 200% center;
-    }
-  }
-  
-  @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  
-
-
-  
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
 .subscribed-list .side-link p {
-    position: relative;
-    overflow: hidden;
-    background: transparent;
-    padding: 10px 10px;
-    border-radius: 15px;
-    border: none;
-    font-size: 10px;
-    color: #e0ffff;
-  
-    cursor: pointer;
-    z-index: 1;
-  }
-  .subscribed-list .side-link p::before{
-    content: '';
-    position: absolute;
-    inset: -3px 50px;
-    background: #42455a;
-    transition: inset 350ms ease;
-    z-index: -2;
-  }
-  .subscribed-list .side-link p:hover::before{
-    inset: -20px 0px;
-    background: #00c2cb;
-  }
-  .subscribed-list .side-link p::after{
-    content: '';
-    position: absolute;
-    inset: 3px;
-    border-radius: 10px;
-    background: #22232e;
-    z-index: -1;
-  }
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  padding: 10px 10px;
+  border-radius: 15px;
+  border: none;
+  font-size: 10px;
+  color: #e0ffff;
+
+  cursor: pointer;
+  z-index: 1;
+}
+.subscribed-list .side-link p::before {
+  content: "";
+  position: absolute;
+  inset: -3px 50px;
+  background: #42455a;
+  transition: inset 350ms ease;
+  z-index: -2;
+}
+.subscribed-list .side-link p:hover::before {
+  inset: -20px 0px;
+  background: #00c2cb;
+}
+.subscribed-list .side-link p::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 10px;
+  background: #22232e;
+  z-index: -1;
+}

@@ -8,15 +8,14 @@ import { API_KEY, value } from "../../data";
 import moment from "moment";
 import { useParams } from "react-router-dom";
 import confetti from "canvas-confetti";
-import { Navbar } from "../Navbar/Navbar";
-import { Sidebar } from "../Sidebar/Sidebar";
+import axios from "axios";
 export const PlayVideo = () => {
-  const { videoId  } = useParams();
+  const { videoId } = useParams();
   const [apiData, setApiData] = useState(null);
   const [channelData, setChannelData] = useState(null);
   const [commentData, setCommentData] = useState([]);
-  const [subscribe,isSubscribe]=useState(false)
-  // console.log(subscribe)
+  console.log(commentData, "cd");
+  const [subscribe, isSubscribe] = useState(false);
 
   const fetchData = async () => {
     const response = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${API_KEY}`;
@@ -29,11 +28,21 @@ export const PlayVideo = () => {
     await fetch(responseData)
       .then((res) => res.json())
       .then((data) => setChannelData(data.items[0]));
+  };
 
-    const comment_url = `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&maxResults=50&videoId=${videoId}&key=${API_KEY}`;
-    await fetch(comment_url)
-      .then((res) => res.json())
-      .then((data) => setCommentData(data.items));
+  const fetchComments = async () => {
+    try {
+      const commentUrl = `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&maxResults=50&videoId=${videoId}&key=${API_KEY}`;
+      const response = await axios.get(commentUrl);
+
+      if (response.status === 200) {
+        setCommentData(response.data.items);
+      } else {
+        throw new Error(`Error ${response.status}: ${response.statusText}`);
+      }
+    } catch (error) {
+      console.error("Failed to fetch comments:", error.message);
+    }
   };
 
   useEffect(() => {
@@ -41,19 +50,20 @@ export const PlayVideo = () => {
   }, [videoId]);
 
   useEffect(() => {
-    if (apiData) fetchDataChannel();
+    if (apiData) {
+      fetchDataChannel();
+      fetchComments();
+    }
   }, [apiData]);
-  const buttonHandler=()=>{
-    isSubscribe((pre)=>!pre)
+  const buttonHandler = () => {
+    isSubscribe((pre) => !pre);
     confetti({
       particleCount: 100,
       spread: 50,
-      origin: { y: 0.6 }
+      origin: { y: 0.6 },
     });
-  }
+  };
   return (
-
-    
     <div className="play-video">
       <iframe
         src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
@@ -92,41 +102,46 @@ export const PlayVideo = () => {
       <hr />
       <div className="publisher ">
         <img
-          src={channelData ? channelData.snippet.thumbnails.default.url : ""}
+          src={channelData ? channelData?.snippet?.thumbnails?.default.url : ""}
           alt=""
         />
         <div>
-          <p>{apiData ? apiData.snippet.channelTitle : ""}</p>
+          <p>{apiData ? apiData?.snippet?.channelTitle : ""}</p>
           <span>
-            {value(channelData ? channelData.statistics.subscriberCount : "")}{" "}
+            {value(channelData ? channelData?.statistics?.subscriberCount : "")}{" "}
             Subscribers
           </span>
         </div>
-        <button onClick={buttonHandler}>{subscribe ? 'Subscribed':'Subscribe'}</button>
+        <button onClick={buttonHandler}>
+          {subscribe ? "Subscribed" : "Subscribe"}
+        </button>
       </div>
       <div className="vid-description">
-        <p>{apiData ? apiData.snippet.description.slice(0, 250) : ""}</p>
+        <p>{apiData ? apiData?.snippet?.description?.slice(0, 250) : ""}</p>
         <hr />
         <h4>
-          {value(apiData ? apiData.statistics.commentCount : "")} Comments
+          {value(apiData ? apiData?.statistics?.commentCount : "")} Comments
         </h4>
+
         {commentData.map((item, index) => {
           return (
             <div key={index} className="comment">
               <img
-                src={item.snippet.topLevelComment.snippet.authorProfileImageUrl}
+                src={
+                  item.snippet?.topLevelComment?.snippet?.authorProfileImageUrl
+                }
                 alt=""
               />
               <div>
                 <h3>
-                  {item.snippet.topLevelComment.snippet.authorDisplayName}{" "}
+                  {item.snippet?.topLevelComment?.snippet?.authorDisplayName}{" "}
                   <span>1 day ago</span>
                 </h3>
-                <p>{item.snippet.topLevelComment.snippet.textDisplay}</p>
+                <p>{item.snippet?.topLevelComment?.snippet?.textDisplay}</p>
                 <div className="comment-action">
                   <img src={like} alt="" />
                   <span>
-                    {value(item.snippet.topLevelComment.snippet.likeCount)}
+                    {value(item.snippet?.topLevelComment?.snippet?.likeCount)}
                   </span>
                   <img src={dislike} alt="" />
                 </div>
@@ -136,6 +151,5 @@ export const PlayVideo = () => {
         })}
       </div>
     </div>
-   
   );
 };
