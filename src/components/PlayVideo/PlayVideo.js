@@ -11,6 +11,7 @@ import confetti from "canvas-confetti";
 import axios from "axios";
 export const PlayVideo = () => {
   const { videoId } = useParams();
+  console.log(videoId,'vid')
   const [apiData, setApiData] = useState(null);
   const [channelData, setChannelData] = useState(null);
   const [commentData, setCommentData] = useState([]);
@@ -73,7 +74,7 @@ export const PlayVideo = () => {
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
       ></iframe>
-      <h3>{apiData ? apiData.snippet.title : "title here"}</h3>
+      <h3>{apiData ? apiData?.snippet?.title : "title here"}</h3>
       <div className="play-video-info">
         <p>
           {apiData ? value(apiData.statistics.viewCount) : "1k"} views &bull;{" "}

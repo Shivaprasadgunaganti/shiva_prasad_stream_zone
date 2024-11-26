@@ -21,7 +21,7 @@ export const Navbar = ({ setButton, toggleData }) => {
         <Link to={"/"}>
           <img
             // src={menu_icon}
-            src="https://cdn.icon-icons.com/icons2/2890/PNG/512/apps_web_development_chrome_logo_website_browser_google_icon_182706.png"
+            src="https://t4.ftcdn.net/jpg/02/55/94/55/360_F_255945532_gXYb4gPaatBY39i9KIte3K38KH3lJYIq.jpg" style={{width:30, height:30, borderRadius:20}}
             className="menu_icon"
             alt=""
             onClick={() => {
@@ -30,7 +30,7 @@ export const Navbar = ({ setButton, toggleData }) => {
           />
         </Link>
         <Link to="/">
-          <h3 className="logo"> </h3>
+          <h3 className="logo">Content Hub </h3>
         </Link>
       </div>
       <div className="nav-middle flex-div">
