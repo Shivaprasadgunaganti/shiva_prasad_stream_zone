@@ -39,35 +39,29 @@ export const Feed = ({ category, value1 }) => {
       {
         
 data.map((item, index) => {
-  const videoId=item.id.videoId || item.id;
-  const linkPath= value1 ? `/video/${videoId}`:`/video/${item.snippet.categoryId}/${videoId}`
+  const videoId=item.id?.videoId || item.id;
+  const linkPath= value1 ? `/video/${videoId}`:`/video/${item.snippet?.categoryId}/${videoId}`
   return (
     <Link
       to={linkPath}
       className="card"
       key={index}
     >
-      <img src={item.snippet.thumbnails.medium.url} alt="" />
-      <h2>{item.snippet.title}</h2>
-      <h3>{item.snippet.channelTitle}</h3>
+      <img src={item.snippet?.thumbnails?.medium.url} alt="" />
+      <h2>{item.snippet?.title}</h2>
+      <h3>{item.snippet?.channelTitle}</h3>
       <p>
         {
-          item.statistics?.viewCount ? `${value(item.statistics.viewCount)} views` : ""}      	| {""}  
+          item.statistics?.viewCount ? `${value(item.statistics?.viewCount)} views` : ""}      	| {""}  
        
-        {moment(item.snippet.publishedAt).fromNow()}
+        {moment(item.snippet?.publishedAt).fromNow()}
         
       </p>
     </Link>
   );
 })
       }
-       {/* <CircleLoader
-        meshColor={"#6366F1"}
-        lightColor={"#E0E7FF"}
-        duration={1.5}
-        desktopSize={"90px"}
-        mobileSize={"64px"}
-      /> */}
+       
     </div>
   );
 };
