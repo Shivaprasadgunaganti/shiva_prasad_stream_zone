@@ -11,7 +11,7 @@ import confetti from "canvas-confetti";
 import axios from "axios";
 export const PlayVideo = () => {
   const { videoId } = useParams();
-  console.log(videoId,'vid')
+  console.log(videoId.id,'vid')
   const [apiData, setApiData] = useState(null);
   const [channelData, setChannelData] = useState(null);
   const [commentData, setCommentData] = useState([]);

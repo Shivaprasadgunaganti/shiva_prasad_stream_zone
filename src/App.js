@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home/Home";
 import { Video } from "./pages/Video/Video";
 import "./App.css";
+import { Demo1 } from "./demo/demo";
 export const ProfileWrapper = createContext("");
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/video/:categoryId?/:videoId" element={<Video />} />
         </Routes>
       </ProfileWrapper.Provider>
+      {/* <Demo1/> */}
     </div>
   );
 };

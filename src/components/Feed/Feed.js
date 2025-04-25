@@ -39,8 +39,11 @@ export const Feed = ({ category, value1 }) => {
       {
         
 data.map((item, index) => {
-  const videoId=item.id?.videoId || item.id;
-  const linkPath= value1 ? `/video/${videoId}`:`/video/${item.snippet?.categoryId}/${videoId}`
+  const videoId=item?.id?.videoId || item?.id;
+  // const linkPath= value1 ? `/video/${videoId}?`:`/video/${item.snippet?.categoryId}/${videoId}`
+  const linkPath=`/video/${videoId}`
+  console.log(videoId,'vi')
+  console.log(linkPath,'lp')
   return (
     <Link
       to={linkPath}
