@@ -137,7 +137,7 @@ export const Sidebar = ({ sidebar, category, setCategory }) => {
 
         <div className="side-link">
           <img
-            src="https://yt3.googleusercontent.com/NaG1OiQHKCSx4Xl2gvd0niSs9fgk10BDhUDiiqGik2o5lpRaeGJL4ecnv2tGUe14zHiS7h_laYM=s160-c-k-c0x00ffffff-no-rj"
+            src="https://yt3.googleusercontent.com/IhZOA133_uJacbeV67UEIqKmMyDjVczny72NNvk-6FIFOoHPTQE41PFuPSe_4parLDslVr50ag=s160-c-k-c0x00ffffff-no-rj"
             alt=""
           />
 
